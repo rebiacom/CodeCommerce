@@ -19,12 +19,12 @@ class AdminCategoriesController extends Controller
     public function index()
     {
         $categories = $this->categories->all();
-        return view('categories/categories', compact('categories'));
+        return view('admin.categories.categories', compact('categories'));
     }
 
     public function create()
     {
-        return view('categories.create');
+        return view('admin.categories.create');
     }
 
     public function store(Requests\CategoryRequest $request)
@@ -39,7 +39,7 @@ class AdminCategoriesController extends Controller
     public function edit($id)
     {
         $category = $this ->categories->find($id);
-        return view('categories.edit', compact('category'));
+        return view('admin.categories.edit', compact('category'));
     }
 
     public function update(Requests\CategoryRequest $request, $id)

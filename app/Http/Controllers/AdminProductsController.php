@@ -18,12 +18,12 @@ class AdminProductsController extends Controller
     public function index()
     {
         $products = $this->products->all();
-        return view('products/products', compact('products'));
+        return view('admin/products/products', compact('products'));
     }
 
     public function create()
     {
-        return view('products.create');
+        return view('admin.products.create');
     }
 
     public function store(Requests\ProductRequest $request)
@@ -38,7 +38,7 @@ class AdminProductsController extends Controller
     public function edit($id)
     {
         $product = $this ->products->find($id);
-        return view('products.edit', compact('product'));
+        return view('admin.products.edit', compact('product'));
     }
 
     public function update(Requests\ProductRequest $request, $id)
