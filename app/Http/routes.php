@@ -17,3 +17,5 @@ Route::get('products', ['as'=>'products', 'uses'=>'AdminProductsController@index
 Route::post('products/store', ['as'=>'products.store', 'uses'=>'AdminProductsController@store']);
 Route::get('products/create', ['as'=>'products.create', 'uses'=>'AdminProductsController@create']);
 Route::get('products/{id}/destroy', ['as'=>'products.destroy', 'uses'=>'AdminProductsController@destroy']);
+Route::get('products/{id}/edit', ['as'=>'products.edit', 'uses'=>'AdminProductsController@edit']);
+Route::put('products/{id}/update', ['as'=>'products.update', 'uses'=>'AdminProductsController@update']);

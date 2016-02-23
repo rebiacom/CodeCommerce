@@ -35,6 +35,18 @@ class AdminProductsController extends Controller
         return redirect()->route('products');
     }
 
+    public function edit($id)
+    {
+        $product = $this ->products->find($id);
+        return view('products.edit', compact('product'));
+    }
+
+    public function update(Requests\ProductRequest $request, $id)
+    {
+        $this->products->find($id)->update($request->all());
+        return redirect()->route('products');
+    }
+
     public function destroy($id)
     {
         $this->products->find($id)->delete();

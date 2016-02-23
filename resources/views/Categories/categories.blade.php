@@ -30,10 +30,10 @@
                 <td>{{ $category->description }}</td>
                 <td>
                     <a href="{{route('categories.edit',['id'=>$category->id])}}"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</button></a>
-                </td>                <td>
+                </td>
+                <td>
                     <a href="{{route('categories.destroy',['id'=>$category->id])}}"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Apagar</button></a>
                 </td>
-
             </tr>
         @endforeach
         </tbody>

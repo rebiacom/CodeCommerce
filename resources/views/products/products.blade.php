@@ -20,7 +20,7 @@
             <th>Nome</th>
             <th>Descrição</th>
             <th>Preço</th>
-            <th>Opções</th>
+            <th colspan="2">Opções</th>
         </tr>
         </thead>
         <tbody>
@@ -32,6 +32,9 @@
                 <td>{{ $product->price}}</td>
                 <td>
                     <a href="{{route('products.destroy',['id'=>$product->id])}}"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Apagar</button></a>
+                </td>
+                <td>
+                    <a href="{{route('products.edit',['id'=>$product->id])}}"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</button></a>
                 </td>
             </tr>
         @endforeach
