@@ -19,12 +19,12 @@ class AdminCategoriesController extends Controller
     public function index()
     {
         $categories = $this->categories->all();
-        return view('admin/Categories/categories', compact('categories'));
+        return view('categories/categories', compact('categories'));
     }
 
     public function create()
     {
-        return view('admin/Categories/create');
+        return view('categories.create');
     }
 
     public function store(Requests\CategoryRequest $request)
@@ -33,6 +33,18 @@ class AdminCategoriesController extends Controller
         $category = $this->categories->fill($input);
         $category->save();
 
+        return redirect()->route('categories');
+    }
+
+    public function edit($id)
+    {
+        $category = $this ->categories->find($id);
+        return view('categories.edit', compact('category'));
+    }
+
+    public function update(Requests\CategoryRequest $request, $id)
+    {
+        $this->categories->find($id)->update($request->all());
         return redirect()->route('categories');
     }
 

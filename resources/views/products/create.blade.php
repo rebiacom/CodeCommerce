@@ -29,7 +29,7 @@
         </div>
 
         <div class="form-group">
-            {!! Form::submit('Adicionar Produto', ['class'=>'btn btn-primary form-control']) !!}
+            {!! Form::submit('Adicionar Produto', ['class'=>'btn btn-primary']) !!}
         </div>
 
     {!! Form::close() !!}
