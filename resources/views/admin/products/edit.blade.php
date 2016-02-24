@@ -29,6 +29,13 @@
     </div>
 
     <div class="form-group">
+        {!! Form::label('featured', 'Destaque:') !!}
+        {!! Form::checkbox('featured', 1, $product->featured) !!}
+        {!! Form::label('recommended', 'Recomendar:') !!}
+        {!! Form::checkbox('recommended', 1, $product->recommended) !!}
+    </div>
+
+    <div class="form-group">
         {!! Form::submit('Editar Produto', ['class'=>'btn btn-primary']) !!}
     </div>
 
