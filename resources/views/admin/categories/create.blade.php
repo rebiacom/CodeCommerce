@@ -12,7 +12,7 @@
         </ul>
     @endif
 
-    {!! Form::open(['url'=>'categories/store']) !!}
+    {!! Form::open(['url'=>'admin/categories/store']) !!}
         <div class="form-group">
             {!! Form::label('name', 'Nome:') !!}
             {!! Form::text('name', '', ['class'=>'form-control']) !!}
@@ -25,6 +25,7 @@
 
         <div class="form-group">
             {!! Form::submit('Adicionar Categoria', ['class'=>'btn btn-primary']) !!}
+            <a href="{{ route('categories')}}" class="btn btn-info">Voltar</a>
         </div>
 
     {!! Form::close() !!}

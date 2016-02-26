@@ -20,7 +20,8 @@
             <th>Nome</th>
             <th>Descrição</th>
             <th>Preço</th>
-            <th colspan="2">Opções</th>
+            <th>Categoria</th>
+            <th colspan="3"></th>
         </tr>
         </thead>
         <tbody>
@@ -30,15 +31,19 @@
                 <td>{{ $product->name }}</td>
                 <td>{{ $product->description }}</td>
                 <td>{{ $product->price}}</td>
-                <td>
-                    <a href="{{route('products.destroy',['id'=>$product->id])}}"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Apagar</button></a>
-                </td>
+                <td>{{ $product->category->name}}</td>
                 <td>
                     <a href="{{route('products.edit',['id'=>$product->id])}}"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</button></a>
+                </td>
+                <td>
+                    <a href="{{route('products.images',['id'=>$product->id])}}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Imagens</button></a>
+                </td>
+                <td>
+                    <a href="{{route('products.destroy',['id'=>$product->id])}}"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Apagar</button></a>
                 </td>
             </tr>
         @endforeach
         </tbody>
     </table>
-
+    {!! $products->render() !!};
 @stop

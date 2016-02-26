@@ -19,7 +19,7 @@
             <th>Id</th>
             <th>Nome</th>
             <th>Descrição</th>
-            <th colspan="2">Opções</th>
+            <th colspan="2"></th>
         </tr>
         </thead>
         <tbody>
@@ -38,4 +38,5 @@
         @endforeach
         </tbody>
     </table>
+    {!! $categories->render() !!};
 @stop
