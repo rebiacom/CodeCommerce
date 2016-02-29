@@ -9,7 +9,7 @@
             {!! Form::label('busca', 'Procurar:') !!}
             {!! Form::text('busca', '', ['class'=>'form-control']) !!}
         </div>
-        {!! Form::submit('Buscar', ['class'=>'btn btn-primary form-control']) !!}
+        {!! Form::submit('Buscar', ['class'=>'btn btn-primary']) !!}
         <a href="{{route('products.create')}}"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Inserir Novo Produto</button></a>
         {!! Form::close() !!}
     <hr>

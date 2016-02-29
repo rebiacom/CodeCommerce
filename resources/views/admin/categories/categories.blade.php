@@ -9,7 +9,7 @@
         {!! Form::label('busca', 'Procurar:') !!}
         {!! Form::text('busca', '', ['class'=>'form-control']) !!}
     </div>
-    {!! Form::submit('Buscar', ['class'=>'btn btn-primary form-control']) !!}
+    {!! Form::submit('Buscar', ['class'=>'btn btn-primary']) !!}
     <a href="{{route('categories.create')}}"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Inserir Nova Categoria</button></a>
     {!! Form::close() !!}
     <hr>

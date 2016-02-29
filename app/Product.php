@@ -15,19 +15,38 @@ class Product extends Model
         'recommended'
     );
 
+    /**
+     * @return BelongsTo
+     */
     public function category()
     {
         return $this->belongsTo('CodeCommerce\Product');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function images()
     {
         return $this->hasMany('CodeCommerce\ProductImage');
     }
 
-    public function tags ()
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function tags()
     {
         return $this->belongsToMany('CodeCommerce\Tag');
+    }
+
+    /**
+     * @return string
+     */
+    public function getTagListAttribute()
+    {
+        $tags = $this->tags->lists('name');
+
+        return implode(',', $tags);
     }
 
 }
